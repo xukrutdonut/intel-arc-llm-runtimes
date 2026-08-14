@@ -1,6 +1,6 @@
 # Intel Arc (Arrow Lake / Lunar Lake) LLM Runtimes for Linux & LM Studio
 
-Este repositorio contiene las compilaciones nativas optimizadas de **`llama.cpp`** e **`IPEX-LLM`** específicamente configuradas para GPUs integradas y dedicadas **Intel Arc** (arquitecturas Arrow Lake, Lunar Lake, Xe/Xe2) en Linux.
+Este repositorio contiene los dos runtimes personalizados y optimizados para GPUs y NPUs **Intel Arc** en Linux y LM Studio.
 
 ---
 
@@ -11,38 +11,29 @@ Este repositorio contiene las compilaciones nativas optimizadas de **`llama.cpp`
 - **`llama-server-intel-arc`**: Servidor de inferencia local compatible con la API de OpenAI.
 - **`libggml-vulkan.so`**: Librería compartida optimizada con sháders de matrices cooperativas.
 
-### 2. Extensión Personalizada para LM Studio (`/lmstudio-extension`)
-- Extensión lista para copiar en `~/.lmstudio/extensions/backends/` para habilitar el backend personalizado de Intel Arc sin sobreescribir los backends por defecto.
+### 2. Extensiones Personalizadas para LM Studio
+- **`/lmstudio-extension-vulkan`**: Extensión acelerada con Vulkan/XMX para copiar en `~/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-vulkan-intelarc-1.0.0/`.
+- **`/lmstudio-extension-ipex`**: Extensión basada en Intel IPEX-LLM (SYCL/XPU) para copiar en `~/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-ipex-intelarc-1.0.0/`.
 
 ---
 
-## 🚀 Guía de Instalación
+## 🚀 Guía de Instalación en LM Studio
 
-### Método A: Ejecutables Directos (CLI / Servidor)
+Copiar las dos extensiones directamente a tu carpeta de backends de LM Studio:
+
 ```bash
-# Dar permisos de ejecución e instalar en el sistema
-chmod +x bin/llama-cli-intel-arc bin/llama-server-intel-arc
-sudo cp bin/llama-cli-intel-arc /usr/local/bin/
-sudo cp bin/llama-server-intel-arc /usr/local/bin/
+mkdir -p ~/.lmstudio/extensions/backends/
 
-# Ejemplo de uso con cualquier modelo GGUF:
-llama-cli-intel-arc -m /ruta/a/tu/modelo.gguf -p "Hola, explica las leyes de Newton" --n-gpu-layers 99
+# 1. Copiar Runtime Intel Arc Vulkan/XMX
+cp -r lmstudio-extension-vulkan ~/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-vulkan-intelarc-1.0.0
+
+# 2. Copiar Runtime Intel Arc IPEX-LLM
+cp -r lmstudio-extension-ipex ~/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-ipex-intelarc-1.0.0
 ```
 
-### Método B: Integración en LM Studio (Linux)
-```bash
-# Copiar el backend acelerado directamente a la carpeta de extensiones de LM Studio
-cp bin/libggml-vulkan.so ~/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-vulkan-avx2-2.29.0/libggml-vulkan.so
-```
-*Reinicia LM Studio y selecciona la opción **"Vulkan llama.cpp"** para activar la aceleración matricial nativa de Intel Arc.*
-
----
-
-## 🛠️ Requisitos de Drivers en Linux
-Asegúrate de tener instalados los controladores de cómputo oficiales de Intel:
-```bash
-sudo apt-get install -y intel-opencl-icd intel-level-zero-gpu libze1
-```
+Reinicia LM Studio y verás los dos nuevos runtimes en el menú desplegable:
+- `Intel Arc (Vulkan/XMX Optimized)`
+- `Intel Arc IPEX-LLM (SYCL/XPU)`
 
 ---
 

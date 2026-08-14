@@ -1,0 +1,1 @@
+[["en",{"langKey":"en","displayName":"Intel Arc IPEX-LLM (SYCL/XPU)","description":"Intel Extension for PyTorch / LLM Engine","releaseNotes":[{"version":"2.29.0-ipex-llm","releaseNotes":"- Intel IPEX-LLM SYCL Engine\n"}]}]]

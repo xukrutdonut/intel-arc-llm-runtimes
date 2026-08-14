@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "runtime_kind": "llama-server",
+  "executable_relative_path": "llama-server",
+  "files": [
+    { "relative_path": "libggml-base.so", "executable": false },
+    { "relative_path": "libggml-cpu.so", "executable": false },
+    { "relative_path": "libggml_llamacpp.so", "executable": false },
+    { "relative_path": "libllama-common.so", "executable": false },
+    { "relative_path": "libllama-common.so.0", "executable": false },
+    { "relative_path": "libllama-common.so.0.0.1", "executable": false },
+    { "relative_path": "libllama-server-impl.so", "executable": false },
+    { "relative_path": "libllama.so", "executable": false },
+    { "relative_path": "libmtmd.so", "executable": false },
+    { "relative_path": "llama-server", "executable": true }
+  ]
+}

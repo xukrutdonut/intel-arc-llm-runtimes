@@ -1,0 +1,1 @@
+[["en",{"langKey":"en","displayName":"Intel Arc (Vulkan/XMX Optimized)","description":"Intel Arc Accelerated llama.cpp Engine","releaseNotes":[{"version":"2.29.0-intel-arc","releaseNotes":"- Native Intel Arc XMX Matrix acceleration\n"}]}]]
