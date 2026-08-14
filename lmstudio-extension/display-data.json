@@ -1,0 +1,1 @@
+[["en",{"langKey":"en","displayName":"Intel Arc SYCL/Vulkan llama.cpp (Nativo Optimizado)","description":"Motor llama.cpp nativo compilado con optimizaciones de matriz XMX/Vulkan para Intel Arc","releaseNotes":[{"version":"1.0.0-intel-arc","releaseNotes":"- Compilacion nativa especifica para Intel Arc Pro / Arrow Lake\n- Activados kernels de matrices cooperativas XMX/Vulkan"}]}]]
