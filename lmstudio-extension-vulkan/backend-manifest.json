@@ -4,7 +4,7 @@
     "llm",
     "embedding"
   ],
-  "version": "2.29.0-intel-arc",
+  "version": "2.29.99",
   "engine": "llama.cpp",
   "target_libraries": [
     {

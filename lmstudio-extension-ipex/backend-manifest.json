@@ -4,7 +4,7 @@
     "llm",
     "embedding"
   ],
-  "version": "2.29.0-ipex-llm",
+  "version": "2.29.98",
   "engine": "llama.cpp",
   "target_libraries": [
     {
